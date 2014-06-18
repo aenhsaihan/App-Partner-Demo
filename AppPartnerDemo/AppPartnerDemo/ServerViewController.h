@@ -10,4 +10,8 @@
 
 @interface ServerViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *niceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *millisecondsLabel;
+
+
 @end

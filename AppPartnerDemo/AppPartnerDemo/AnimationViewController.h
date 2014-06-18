@@ -10,4 +10,8 @@
 
 @interface AnimationViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *animationPromptLabel;
+@property (weak, nonatomic) IBOutlet UILabel *animationBonusLabel;
+
+
 @end

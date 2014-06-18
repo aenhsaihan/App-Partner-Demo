@@ -7,6 +7,7 @@
 //
 
 #import "ServerViewController.h"
+#import "UIColor+HexString.h"
 
 @interface ServerViewController ()
 
@@ -27,6 +28,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.niceLabel.text = @"NICE!";
+    [self.niceLabel setFont:[UIFont fontWithName:@"Machinato-Light" size:22.0]]; //FIXME: Reconfigure size for NICE!
+    [self.niceLabel setTextColor:[UIColor colorWithHexString:@"ff5f21"]];
+    
+    self.millisecondsLabel.text = @"144.16ms";
+    [self.millisecondsLabel setFont:[UIFont fontWithName:@"Machinato-ExtraLightItalic" size:22]]; //FIXME: Reconfigure size for milliseconds
+    [self.millisecondsLabel setTextColor:[UIColor colorWithHexString:@"000000"]];
 }
 
 - (void)didReceiveMemoryWarning

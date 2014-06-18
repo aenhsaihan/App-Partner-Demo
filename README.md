@@ -25,7 +25,8 @@ The user interface appears to consist of four views, along with an initial splas
 - Splash screen
 - Coding tasks view
   - Facebook friends list view
-    - Scrollable list (UIScrollView)
+    - Scrollable list (TableView)
+      - Custom cells
     - Reload data will refresh friends list
     - Tapping won't do anything
   - Server ping view

@@ -72,6 +72,7 @@
 		482D6DBB19510E34002374C0 /* Jelloween - Machinato SemiBold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 482D6DB019510E34002374C0 /* Jelloween - Machinato SemiBold Italic.ttf */; };
 		482D6DBC19510E34002374C0 /* Jelloween - Machinato SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 482D6DB119510E34002374C0 /* Jelloween - Machinato SemiBold.ttf */; };
 		482D6DBD19510E34002374C0 /* Jelloween - Machinato.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 482D6DB219510E34002374C0 /* Jelloween - Machinato.ttf */; };
+		482D6DC019521096002374C0 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 482D6DBF19521096002374C0 /* UIColor+HexString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,8 @@
 		482D6DB019510E34002374C0 /* Jelloween - Machinato SemiBold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jelloween - Machinato SemiBold Italic.ttf"; sourceTree = "<group>"; };
 		482D6DB119510E34002374C0 /* Jelloween - Machinato SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jelloween - Machinato SemiBold.ttf"; sourceTree = "<group>"; };
 		482D6DB219510E34002374C0 /* Jelloween - Machinato.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jelloween - Machinato.ttf"; sourceTree = "<group>"; };
+		482D6DBE19521096002374C0 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
+		482D6DBF19521096002374C0 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +222,8 @@
 			children = (
 				482D6D2D1951025B002374C0 /* AppDelegate.h */,
 				482D6D2E1951025B002374C0 /* AppDelegate.m */,
+				482D6DBE19521096002374C0 /* UIColor+HexString.h */,
+				482D6DBF19521096002374C0 /* UIColor+HexString.m */,
 				482D6D301951025B002374C0 /* Main.storyboard */,
 				482D6D331951025B002374C0 /* ViewController.h */,
 				482D6D341951025B002374C0 /* ViewController.m */,
@@ -476,6 +481,7 @@
 				482D6D351951025B002374C0 /* ViewController.m in Sources */,
 				482D6D2F1951025B002374C0 /* AppDelegate.m in Sources */,
 				482D6DA619510D97002374C0 /* AnimationViewController.m in Sources */,
+				482D6DC019521096002374C0 /* UIColor+HexString.m in Sources */,
 				482D6D2B1951025B002374C0 /* main.m in Sources */,
 				482D6DA319510D4E002374C0 /* ServerViewController.m in Sources */,
 			);
@@ -684,6 +690,7 @@
 				482D6D4F1951025C002374C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		482D6D501951025C002374C0 /* Build configuration list for PBXNativeTarget "AppPartnerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -692,6 +699,7 @@
 				482D6D521951025C002374C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

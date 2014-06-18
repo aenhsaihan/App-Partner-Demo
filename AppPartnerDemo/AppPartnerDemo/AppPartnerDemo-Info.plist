@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Jelloween - Machinato Bold Italic.ttf</string>
+		<string>Jelloween - Machinato Bold.ttf</string>
+		<string>Jelloween - Machinato ExtraLight Italic.ttf</string>
+		<string>Jelloween - Machinato Extralight.ttf</string>
+		<string>Jelloween - Machinato Italic.ttf</string>
+		<string>Jelloween - Machinato Light Italic.ttf</string>
+		<string>Jelloween - Machinato Light.ttf</string>
+		<string>Jelloween - Machinato SemiBold Italic.ttf</string>
+		<string>Jelloween - Machinato SemiBold.ttf</string>
+		<string>Jelloween - Machinato.ttf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

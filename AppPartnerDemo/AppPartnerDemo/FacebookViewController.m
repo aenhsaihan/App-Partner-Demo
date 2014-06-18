@@ -29,6 +29,7 @@
 	// Do any additional setup after loading the view.
     
     self.title = @"FACEBOOK FRIENDS";
+    
 }
 
 - (void)didReceiveMemoryWarning

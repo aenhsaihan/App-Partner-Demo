@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "UIColor+HexString.h"
 
 @interface ViewController ()
 
@@ -25,6 +26,10 @@
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
+    
+    [self.codingTasksLabel setFont:[UIFont fontWithName:@"Machinato-Bold" size:22.0]];
+    [self.codingTasksLabel setTextColor:[UIColor colorWithHexString:@"#ffffff"]];
+    
 }
 
 - (void)didReceiveMemoryWarning

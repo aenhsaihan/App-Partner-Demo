@@ -58,4 +58,4 @@ This is where you'll log your hours spent on each part of the project.
 Tasks | Hours
 ----- | -----
 Planning | 1
-Build UI | ?
+Build UI | 1

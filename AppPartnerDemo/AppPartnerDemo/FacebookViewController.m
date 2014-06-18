@@ -7,6 +7,7 @@
 //
 
 #import "FacebookViewController.h"
+#import "UIColor+HexString.h"
 
 @interface FacebookViewController ()
 
@@ -29,7 +30,7 @@
 	// Do any additional setup after loading the view.
     
     self.title = @"FACEBOOK FRIENDS";
-    
+
 }
 
 - (void)didReceiveMemoryWarning

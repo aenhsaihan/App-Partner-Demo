@@ -29,6 +29,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    self.title = @"SERVER PING";
+    
     self.niceLabel.text = @"NICE!";
     [self.niceLabel setFont:[UIFont fontWithName:@"Machinato-Light" size:22.0]]; //FIXME: Reconfigure size for NICE!
     [self.niceLabel setTextColor:[UIColor colorWithHexString:@"ff5f21"]];

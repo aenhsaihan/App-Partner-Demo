@@ -15,17 +15,17 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    NSLog(@"Loading");
-    
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.view.backgroundColor = [UIColor clearColor];
+    // Set the image for the back bar button
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationController.navigationBar.backIndicatorImage = [UIImage imageNamed:@"button_backarrow.png"];
+    self.navigationController.navigationBar.backIndicatorTransitionMaskImage = [UIImage imageNamed:@"button_backarrow.png"];
+
     
     [self.codingTasksLabel setFont:[UIFont fontWithName:@"Machinato-Bold" size:22.0]];
     [self.codingTasksLabel setTextColor:[UIColor colorWithHexString:@"#ffffff"]];

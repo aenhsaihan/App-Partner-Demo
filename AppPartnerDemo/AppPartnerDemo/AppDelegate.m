@@ -7,12 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import "UIColor+HexString.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // Make the navigation bar transparent
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    
+    // Set the font type, size, and color of the navigation bar text and icons
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Machinato-ExtraLight" size:21], NSFontAttributeName, [UIColor colorWithHexString:@"ffffff"], NSForegroundColorAttributeName, nil]];
+    [UINavigationBar appearance].tintColor = [UIColor colorWithHexString:@"ffffff"];
+    
     return YES;
 }
 							

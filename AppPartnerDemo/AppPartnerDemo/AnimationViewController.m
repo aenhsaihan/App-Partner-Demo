@@ -29,12 +29,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    self.title = @"ANIMATION";
+    
     self.animationPromptLabel.text = @"Animate the App Partner icon. Make it spin around 360 degrees when the spin button is pressed. Allow it to be dragged around the screen by touching and dragging.";
-    [self.animationPromptLabel setFont:[UIFont fontWithName:@"Machinato-ExtraLight" size:16.0]];
+    [self.animationPromptLabel setFont:[UIFont fontWithName:@"Machinato-ExtraLight" size:16.0]]; //FIXME: Font size for animation prompt
     [self.animationPromptLabel setTextColor:[UIColor colorWithHexString:@"000000"]];
     
     self.animationBonusLabel.text = @"BONUS POINTS FOR CREATIVITY";
-    [self.animationBonusLabel setFont:[UIFont fontWithName:@"Machinato-SemiBoldItalic" size:14.0]];
+    [self.animationBonusLabel setFont:[UIFont fontWithName:@"Machinato-SemiBoldItalic" size:14.0]];  //FIXME: Font size for animation bonus
     [self.animationBonusLabel setTextColor:[UIColor colorWithHexString:@"000000"]];
     
 }

@@ -13,7 +13,7 @@ The assignment consists of three coding tasks:
 
 ##TASKS
 
-- [ ] Build out the UI fully
+- [x] Build out the UI fully
 - [ ] Build out Facebook component
 - [ ] Build out server ping component
 - [ ] Build out animation component
@@ -58,4 +58,7 @@ This is where you'll log your hours spent on each part of the project.
 Tasks | Hours
 ----- | -----
 Planning | 1
-Build UI | 1
+Build UI | 3
+Post Request | ?
+Facebook SDK | ?
+Animation | ?

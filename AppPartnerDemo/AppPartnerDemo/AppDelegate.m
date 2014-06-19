@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "UIColor+HexString.h"
+#import "FacebookViewController.h"
 
 
 static dispatch_once_t once;
@@ -172,7 +173,8 @@ static NSOperationQueue *connectionQueue;
 
 -(void)userLoggedIn
 {
-    NSLog(@"Showing the user the logged in UI");
+    FacebookViewController *facebookVC = [[FacebookViewController alloc] init];
+    [facebookVC makeGraphAPICall];
 }
 
 -(void)userLoggedOut

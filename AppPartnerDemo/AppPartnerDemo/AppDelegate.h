@@ -17,4 +17,6 @@
 
 - (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;
 
+-(void)showMessage:(NSString *)alertText withTitle:(NSString *)alertTitle;
+
 @end

@@ -15,7 +15,7 @@ The assignment consists of three coding tasks:
 
 - [x] Build out the UI fully
 - [ ] Build out Facebook component
-- [ ] Build out server ping component
+- [x] Build out server ping component
 - [ ] Build out animation component
 
 ##USER INTERFACE
@@ -59,6 +59,6 @@ Tasks | Hours
 ----- | -----
 Planning | 1
 Build UI | 3
-Post Request | ?
+Post Request | 1.5
 Facebook SDK | ?
 Animation | ?

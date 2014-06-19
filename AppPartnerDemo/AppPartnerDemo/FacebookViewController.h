@@ -10,4 +10,6 @@
 
 @interface FacebookViewController : UIViewController
 
+- (IBAction)reloadButtonTouched:(id)sender;
+
 @end

@@ -79,10 +79,55 @@ static int retryCount;
     // We will use retryCount as part of the error handling logic for errors that need retries
     retryCount = 0;
     
-    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//    [FBRequestConnection startWithGraphPath:@"/me/friends"
+//                                 parameters:nil
+//                                 HTTPMethod:@"GET"
+//                          completionHandler:^(
+//                                              FBRequestConnection *connection,
+//                                              id result,
+//                                              NSError *error
+//                                              ) {
+//                              
+//                              NSLog(@"%@", result);
+//                          }];
+    
+//    FBRequest *friendsRequest = [FBRequest requestForMyFriends];
+//    
+//    [friendsRequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//        if (!error) {
+//            // Success! Include your code to handle the results here
+//
+//            NSArray *friends = [result objectForKey:@"data"];
+//            NSLog(@"Found: %i friends", friends.count);
+//            for (NSDictionary<FBGraphUser> *friend in friends) {
+//                NSLog(@"I have a friend named %@ with id %@", friend.name, friend.objectID);
+//            }
+//            
+//        } else if (error) {
+//            // An error occurred, we need to handle the error
+//            // See: https://developers.facebook.com/docs/ios/errors
+//            
+//            [self handleAPICallError:error];
+//        } else {
+//            
+//            retryCount = 0;
+//        }
+//    }];
+    
+    FBRequest *friendsRequest = [FBRequest requestForMyFriends];
+    
+    [friendsRequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        
         if (!error) {
             // Success! Include your code to handle the results here
-            NSLog(@"user info: %@", result);
+            
+            
+            NSArray *friends = [result objectForKey:@"data"];
+            NSLog(@"Found: %i friends", friends.count);
+            for (NSDictionary<FBGraphUser> *friend in friends) {
+                NSLog(@"I have a friend named %@ with id %@", friend.name, friend.objectID);
+            }
+            
         } else if (error) {
             // An error occurred, we need to handle the error
             // See: https://developers.facebook.com/docs/ios/errors
@@ -93,6 +138,24 @@ static int retryCount;
             retryCount = 0;
         }
     }];
+    
+
+    
+    
+//    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//        if (!error) {
+//            // Success! Include your code to handle the results here
+//            NSLog(@"user info: %@", result);
+//        } else if (error) {
+//            // An error occurred, we need to handle the error
+//            // See: https://developers.facebook.com/docs/ios/errors
+//            
+//            [self handleAPICallError:error];
+//        } else {
+//            
+//            retryCount = 0;
+//        }
+//    }];
 }
 
 // Helper method to handle errors during API calls

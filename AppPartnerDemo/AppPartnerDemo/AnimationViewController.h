@@ -12,6 +12,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *animationPromptLabel;
 @property (weak, nonatomic) IBOutlet UILabel *animationBonusLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *logo;
+
+
+- (IBAction)spinButtonPressed:(id)sender;
 
 
 @end

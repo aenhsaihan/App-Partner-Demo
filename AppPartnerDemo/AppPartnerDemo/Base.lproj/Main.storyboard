@@ -188,6 +188,9 @@
                                 <state key="normal" image="button_spin.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="spinButtonPressed:" destination="SSV-gF-UR1" eventType="touchUpInside" id="QMf-bz-HWE"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_cell_animationtest.png" translatesAutoresizingMaskIntoConstraints="NO" id="clT-0T-nkv">
                                 <rect key="frame" x="40" y="72" width="240" height="321"/>
@@ -217,6 +220,7 @@
                     <connections>
                         <outlet property="animationBonusLabel" destination="VcC-6W-G7g" id="kD9-dx-EFJ"/>
                         <outlet property="animationPromptLabel" destination="UgZ-iN-sgo" id="fBU-YY-L2N"/>
+                        <outlet property="logo" destination="MoN-K8-TiW" id="ro6-Zc-mTe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eUZ-Qf-XiK" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -32,7 +32,7 @@ static NSOperationQueue *connectionQueue;
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
         
         // If there's one, just open the session silently, without showing the user the login UI
-        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile", @"user_friends"]
+        [FBSession openActiveSessionWithReadPermissions:@[@"user_friends"]
                                            allowLoginUI:NO
                                       completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
                                           // Handler for session state changes
@@ -83,15 +83,6 @@ static NSOperationQueue *connectionQueue;
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation
 {
-    // Note this handler block should be the exact same as the handler passed to any open calls.
-    [FBSession.activeSession setStateChangeHandler:
-     ^(FBSession *session, FBSessionState state, NSError *error) {
-         
-         // Retrieve the app delegate
-         AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-         // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
-         [appDelegate sessionStateChanged:session state:state error:error];
-     }];
     
     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
 }
@@ -102,8 +93,16 @@ static NSOperationQueue *connectionQueue;
     // If the session was opened successfully
     if (!error && state == FBSessionStateOpen){
         NSLog(@"Session opened");
-        // Show the user the logged-in UI
-        [self userLoggedIn];
+        
+        //If you're making an API request for user data
+        if (self.APIRequest) {
+            FacebookViewController *facebookVC = [[FacebookViewController alloc] init];
+            [facebookVC makeGraphAPICall];
+            
+            //Reset flag for making API request
+            self.APIRequest = NO;
+        }
+        
         return;
     }
     if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){
@@ -173,13 +172,12 @@ static NSOperationQueue *connectionQueue;
 
 -(void)userLoggedIn
 {
-    FacebookViewController *facebookVC = [[FacebookViewController alloc] init];
-    [facebookVC makeGraphAPICall];
+    //Method used to present a logged in UI to user
 }
 
 -(void)userLoggedOut
 {
-    NSLog(@"Showing the user the logged out UI");
+    //Method used to present a logged out UI to user
 }
 
 @end

@@ -182,6 +182,18 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_cell_animationtest.png" translatesAutoresizingMaskIntoConstraints="NO" id="clT-0T-nkv">
+                                <rect key="frame" x="40" y="72" width="240" height="321"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graphic_apppartnericon.png" translatesAutoresizingMaskIntoConstraints="NO" id="MoN-K8-TiW">
+                                <rect key="frame" x="99" y="267" width="123" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JlY-Mf-Bqh" appends="YES" id="s3t-4C-HWk"/>
+                                </connections>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PF3-1f-86u">
                                 <rect key="frame" x="40" y="407" width="241" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -192,14 +204,6 @@
                                     <action selector="spinButtonPressed:" destination="SSV-gF-UR1" eventType="touchUpInside" id="QMf-bz-HWE"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_cell_animationtest.png" translatesAutoresizingMaskIntoConstraints="NO" id="clT-0T-nkv">
-                                <rect key="frame" x="40" y="72" width="240" height="321"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graphic_apppartnericon.png" translatesAutoresizingMaskIntoConstraints="NO" id="MoN-K8-TiW">
-                                <rect key="frame" x="99" y="267" width="123" height="117"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Animation Prompt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="222" translatesAutoresizingMaskIntoConstraints="NO" id="UgZ-iN-sgo">
                                 <rect key="frame" x="49" y="86" width="222" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -224,6 +228,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eUZ-Qf-XiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="JlY-Mf-Bqh">
+                    <connections>
+                        <action selector="panPiece:" destination="SSV-gF-UR1" id="xz0-h7-2br"/>
+                        <outlet property="delegate" destination="SSV-gF-UR1" id="wc9-ei-uAV"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1210" y="831"/>
         </scene>

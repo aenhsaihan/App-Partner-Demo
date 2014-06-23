@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnimationViewController : UIViewController
+@interface AnimationViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *animationPromptLabel;
 @property (weak, nonatomic) IBOutlet UILabel *animationBonusLabel;

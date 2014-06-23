@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FacebookViewController : UIViewController
+@interface FacebookViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) NSMutableArray *friends;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)reloadButtonTouched:(id)sender;
 - (void)makeGraphAPICall;

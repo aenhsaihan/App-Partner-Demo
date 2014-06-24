@@ -47,6 +47,10 @@
 
 - (IBAction)pingServer:(id)sender {
     
+    if (![APP_DELEGATE checkForInternetConnection]) {
+        return;
+    }
+    
     NSDate *start = [NSDate date];
     
     NSURL *url = [NSURL URLWithString:@"http://ec2-54-243-205-92.compute-1.amazonaws.com/Tests/ping.php"];

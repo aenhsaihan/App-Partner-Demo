@@ -180,4 +180,25 @@ static NSOperationQueue *connectionQueue;
     //Method used to present a logged out UI to user
 }
 
+-(BOOL)checkForInternetConnection
+{
+    NSURL *scriptUrl = [NSURL URLWithString:@"http://www.google.com/m"];
+    NSData *data = [NSData dataWithContentsOfURL:scriptUrl];
+    
+    if (data) {
+        NSLog(@"Device is connected to the internet");
+        return YES;
+    }
+    else {
+        
+        NSLog(@"Device is not connected to the internet");
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There appears to be a problem with your connection." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        
+        return NO;
+    }
+    
+}
+
 @end

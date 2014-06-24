@@ -48,6 +48,10 @@ static int retryCount;
 
 - (IBAction)reloadButtonTouched:(id)sender {
     
+    if (![APP_DELEGATE checkForInternetConnection]) {
+        return;
+    }
+    
     // If the session state is any of the two "open" states when the button is clicked
     if (FBSession.activeSession.state == FBSessionStateOpen
         || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {

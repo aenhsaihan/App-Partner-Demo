@@ -21,4 +21,6 @@
 
 -(void)showMessage:(NSString *)alertText withTitle:(NSString *)alertTitle;
 
+-(BOOL)checkForInternetConnection;
+
 @end

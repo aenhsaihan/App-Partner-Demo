@@ -36,7 +36,7 @@ static int retryCount;
     
     self.title = @"FACEBOOK FRIENDS";
     
-    //self.tableView.layer.cornerRadius = 2;
+    self.tableView.layer.cornerRadius = 2;
 
 }
 
@@ -187,12 +187,12 @@ static int retryCount;
     
     NSDictionary<FBGraphUser> *friend = [self.friends objectAtIndex:indexPath.row];
     
-    UIImage *profilePic = [UIImage imageWithData:[[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture", friend.objectID]]]];
     
     [cell.nameLabel setFont:[UIFont fontWithName:@"Machinato-Regular" size:44.0]];
     [cell.nameLabel setTextColor:[UIColor colorWithHexString:@"#007ae0"]];
-    
     cell.nameLabel.text = friend.name;
+    
+    UIImage *profilePic = [UIImage imageWithData:[[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture", friend.objectID]]]];
     cell.thumbnailImageView.image = profilePic;
     
     

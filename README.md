@@ -47,6 +47,10 @@ Apparently, Facebook has recently decided to not allow developers to pull the li
 
 Spinning and dragging has been implemented for the animation component. In addition to that, you can rotate the logo using two fingers, and you can zoom in and out on the logo by pinching it. Furthermore, all gestures can be recognized simultaneously, so gesture away!
 
+##OTHER NOTES
+
+I had some issues with the font sizes. All the fonts ended up looking bigger than the PDF even though I used the given font sizes.
+
 ##HOURS
 
 This is where you'll log your hours spent on each part of the project.

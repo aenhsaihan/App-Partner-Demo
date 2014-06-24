@@ -10,6 +10,7 @@
 #import "UIColor+HexString.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "AppDelegate.h"
+#import "MiddleTableCell.h"
 
 @interface FacebookViewController ()
 
@@ -34,6 +35,8 @@ static int retryCount;
 	// Do any additional setup after loading the view.
     
     self.title = @"FACEBOOK FRIENDS";
+    
+    //self.tableView.layer.cornerRadius = 2;
 
 }
 
@@ -160,6 +163,8 @@ static int retryCount;
 //    }];
 }
 
+
+
 // Helper method to handle errors during API calls
 - (void)handleAPICallError:(NSError *)error
 {
@@ -222,17 +227,57 @@ static int retryCount;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"MiddleTableCell";
+    MiddleTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+//        
+//        cell.backgroundView =  [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"bg_cell_topcap_fbfriends.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0] ];
+//        //cell.selectedBackgroundView =  [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"bg_cell_topcap_fbfriends.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0] ];
+        
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MiddleTableCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
     
     // Configure the cell...
     
     NSDictionary<FBGraphUser> *friend = [self.friends objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = friend.name;
+    UIImage *profilePic = [UIImage imageWithData:[[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture", friend.objectID]]]];
+    
+//    cell.textLabel.text = friend.name;
+//    cell.imageView.image = profilePic;
+    
+    
+    [cell.nameLabel setFont:[UIFont fontWithName:@"Machinato-Regular" size:44.0]]; //FIXME: Reconfigure size for NICE!
+    [cell.nameLabel setTextColor:[UIColor colorWithHexString:@"#007ae0"]];
+    
+    cell.nameLabel.text = friend.name;
+    cell.thumbnailImageView.image = profilePic;
+    
+    
+    UIImage *backgroundImage;
+    
+    if (indexPath.row == 0) {
+        
+        backgroundImage = [UIImage imageNamed:@"bg_cell_topcap_fbfriends.png"];
+        
+    } else if (indexPath.row == [self.friends count]) {
+        
+        backgroundImage = [UIImage imageNamed:@"bg_cell_bottomcap_fbfriends.png"];
+        
+    } else {
+        
+        backgroundImage = [UIImage imageNamed:@"bg_cell_middle_fbfriends.png"];
+        
+    }
+    
+    cell.backgroundImageView.image = backgroundImage;
+    
+//    UIView *customCellView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 271, 69)];
+//    customCellView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_cell_topcap_fbfriends.png"]];
+//    
+//    cell.backgroundView = customCellView;
     
     return cell;
 }
@@ -288,6 +333,10 @@ static int retryCount;
  
  */
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 64;
+}
 
 
 @end

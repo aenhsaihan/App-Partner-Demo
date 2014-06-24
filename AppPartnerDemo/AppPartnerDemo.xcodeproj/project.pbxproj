@@ -74,6 +74,8 @@
 		482D6DBD19510E34002374C0 /* Jelloween - Machinato.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 482D6DB219510E34002374C0 /* Jelloween - Machinato.ttf */; };
 		482D6DC019521096002374C0 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 482D6DBF19521096002374C0 /* UIColor+HexString.m */; };
 		48A8E10119538FC900E373DC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A8E10019538FC900E373DC /* FacebookSDK.framework */; };
+		48A8E10A1958E9FB00E373DC /* MiddleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48A8E1091958E9FB00E373DC /* MiddleTableCell.xib */; };
+		48A8E10D1959023100E373DC /* MiddleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A8E10C1959023100E373DC /* MiddleTableCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +165,9 @@
 		482D6DBE19521096002374C0 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
 		482D6DBF19521096002374C0 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
 		48A8E10019538FC900E373DC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		48A8E1091958E9FB00E373DC /* MiddleTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiddleTableCell.xib; sourceTree = "<group>"; };
+		48A8E10B1959023100E373DC /* MiddleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleTableCell.h; sourceTree = "<group>"; };
+		48A8E10C1959023100E373DC /* MiddleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiddleTableCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +229,7 @@
 		482D6D241951025B002374C0 /* AppPartnerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				48A8E1081958DCFB00E373DC /* Cells */,
 				482D6D2D1951025B002374C0 /* AppDelegate.h */,
 				482D6D2E1951025B002374C0 /* AppDelegate.m */,
 				482D6DBE19521096002374C0 /* UIColor+HexString.h */,
@@ -336,6 +342,16 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		48A8E1081958DCFB00E373DC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				48A8E10B1959023100E373DC /* MiddleTableCell.h */,
+				48A8E10C1959023100E373DC /* MiddleTableCell.m */,
+				48A8E1091958E9FB00E373DC /* MiddleTableCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -427,6 +443,7 @@
 				482D6DB519510E34002374C0 /* Jelloween - Machinato Bold.ttf in Resources */,
 				482D6DBA19510E34002374C0 /* Jelloween - Machinato Light.ttf in Resources */,
 				482D6D291951025B002374C0 /* InfoPlist.strings in Resources */,
+				48A8E10A1958E9FB00E373DC /* MiddleTableCell.xib in Resources */,
 				482D6D831951071E002374C0 /* bg_codingtasks.png in Resources */,
 				482D6D321951025B002374C0 /* Main.storyboard in Resources */,
 				482D6DBB19510E34002374C0 /* Jelloween - Machinato SemiBold Italic.ttf in Resources */,
@@ -488,6 +505,7 @@
 				482D6DA019510CA0002374C0 /* FacebookViewController.m in Sources */,
 				482D6D351951025B002374C0 /* ViewController.m in Sources */,
 				482D6D2F1951025B002374C0 /* AppDelegate.m in Sources */,
+				48A8E10D1959023100E373DC /* MiddleTableCell.m in Sources */,
 				482D6DA619510D97002374C0 /* AnimationViewController.m in Sources */,
 				482D6DC019521096002374C0 /* UIColor+HexString.m in Sources */,
 				482D6D2B1951025B002374C0 /* main.m in Sources */,

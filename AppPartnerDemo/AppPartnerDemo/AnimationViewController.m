@@ -64,6 +64,11 @@
     }
 }
 
+
+/**
+ Shift the piece's center by the pan amount.
+ Reset the gesture recognizer's translation to {0, 0} after applying so the next callback is a delta from the current position.
+ */
 - (IBAction)panPiece:(UIPanGestureRecognizer *)gestureRecognizer {
     
     UIView *piece = [gestureRecognizer view];
@@ -77,6 +82,55 @@
         [gestureRecognizer setTranslation:CGPointZero inView:[piece superview]];
     }
 }
+
+/**
+ Rotate the piece by the current rotation.
+ Reset the gesture recognizer's rotation to 0 after applying so the next callback is a delta from the current rotation.
+ */
+- (IBAction)rotatePiece:(UIRotationGestureRecognizer *)gestureRecognizer {
+    
+    [self adjustAnchorPointForGestureRecognizer:gestureRecognizer];
+    
+    if ([gestureRecognizer state] == UIGestureRecognizerStateBegan || [gestureRecognizer state] == UIGestureRecognizerStateChanged) {
+        [gestureRecognizer view].transform = CGAffineTransformRotate([[gestureRecognizer view] transform], [gestureRecognizer rotation]);
+        [gestureRecognizer setRotation:0];
+    }
+}
+
+/**
+ Ensure that the pinch, pan and rotate gesture recognizers on a particular view can all recognize simultaneously.
+ Prevent other gesture recognizers from recognizing simultaneously.
+ */
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    // If the gesture recognizers's view isn't the logo, don't allow simultaneous recognition.
+    if (gestureRecognizer.view != self.logo) {
+        return NO;
+    }
+    
+    // If the gesture recognizers are on different views, don't allow simultaneous recognition.
+    if (gestureRecognizer.view != otherGestureRecognizer.view) {
+        return NO;
+    }
+    
+    // If either of the gesture recognizers is the long press, don't allow simultaneous recognition.
+    if ([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]] || [otherGestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]]) {
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (IBAction)scalePiece:(UIPinchGestureRecognizer *)gestureRecognizer {
+    
+    [self adjustAnchorPointForGestureRecognizer:gestureRecognizer];
+    
+    if ([gestureRecognizer state] == UIGestureRecognizerStateBegan || [gestureRecognizer state] == UIGestureRecognizerStateChanged) {
+        [gestureRecognizer view].transform = CGAffineTransformScale([[gestureRecognizer view] transform], [gestureRecognizer scale], [gestureRecognizer scale]);
+        [gestureRecognizer setScale:1];
+    }
+}
+
 
 - (IBAction)spinButtonPressed:(id)sender {
     

@@ -199,6 +199,8 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="JlY-Mf-Bqh" appends="YES" id="s3t-4C-HWk"/>
+                                    <outletCollection property="gestureRecognizers" destination="mTJ-3M-dRC" appends="YES" id="QLJ-d3-KQ5"/>
+                                    <outletCollection property="gestureRecognizers" destination="qfc-Ig-hmY" appends="YES" id="e4h-eb-nte"/>
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PF3-1f-86u">
@@ -241,6 +243,18 @@
                         <outlet property="delegate" destination="SSV-gF-UR1" id="wc9-ei-uAV"/>
                     </connections>
                 </panGestureRecognizer>
+                <rotationGestureRecognizer id="mTJ-3M-dRC">
+                    <connections>
+                        <action selector="rotatePiece:" destination="SSV-gF-UR1" id="rmN-W2-95X"/>
+                        <outlet property="delegate" destination="SSV-gF-UR1" id="YxV-fA-76b"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <pinchGestureRecognizer id="qfc-Ig-hmY">
+                    <connections>
+                        <action selector="scalePiece:" destination="SSV-gF-UR1" id="LiA-MN-0qB"/>
+                        <outlet property="delegate" destination="SSV-gF-UR1" id="MxP-3p-W25"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1210" y="831"/>
         </scene>

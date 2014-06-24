@@ -82,41 +82,6 @@ static int retryCount;
     // We will use retryCount as part of the error handling logic for errors that need retries
     retryCount = 0;
     
-//    [FBRequestConnection startWithGraphPath:@"/me/friends"
-//                                 parameters:nil
-//                                 HTTPMethod:@"GET"
-//                          completionHandler:^(
-//                                              FBRequestConnection *connection,
-//                                              id result,
-//                                              NSError *error
-//                                              ) {
-//                              
-//                              NSLog(@"%@", result);
-//                          }];
-    
-//    FBRequest *friendsRequest = [FBRequest requestForMyFriends];
-//    
-//    [friendsRequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-//        if (!error) {
-//            // Success! Include your code to handle the results here
-//
-//            NSArray *friends = [result objectForKey:@"data"];
-//            NSLog(@"Found: %i friends", friends.count);
-//            for (NSDictionary<FBGraphUser> *friend in friends) {
-//                NSLog(@"I have a friend named %@ with id %@", friend.name, friend.objectID);
-//            }
-//            
-//        } else if (error) {
-//            // An error occurred, we need to handle the error
-//            // See: https://developers.facebook.com/docs/ios/errors
-//            
-//            [self handleAPICallError:error];
-//        } else {
-//            
-//            retryCount = 0;
-//        }
-//    }];
-    
     FBRequest *friendsRequest = [FBRequest requestForMyFriends];
     
     [friendsRequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -144,23 +109,6 @@ static int retryCount;
         }
     }];
     
-
-    
-    
-//    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-//        if (!error) {
-//            // Success! Include your code to handle the results here
-//            NSLog(@"user info: %@", result);
-//        } else if (error) {
-//            // An error occurred, we need to handle the error
-//            // See: https://developers.facebook.com/docs/ios/errors
-//            
-//            [self handleAPICallError:error];
-//        } else {
-//            
-//            retryCount = 0;
-//        }
-//    }];
 }
 
 
@@ -230,11 +178,7 @@ static int retryCount;
     static NSString *CellIdentifier = @"MiddleTableCell";
     MiddleTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-//        
-//        cell.backgroundView =  [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"bg_cell_topcap_fbfriends.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0] ];
-//        //cell.selectedBackgroundView =  [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"bg_cell_topcap_fbfriends.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0] ];
-        
+    
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MiddleTableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
@@ -245,11 +189,7 @@ static int retryCount;
     
     UIImage *profilePic = [UIImage imageWithData:[[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture", friend.objectID]]]];
     
-//    cell.textLabel.text = friend.name;
-//    cell.imageView.image = profilePic;
-    
-    
-    [cell.nameLabel setFont:[UIFont fontWithName:@"Machinato-Regular" size:44.0]]; //FIXME: Reconfigure size for NICE!
+    [cell.nameLabel setFont:[UIFont fontWithName:@"Machinato-Regular" size:44.0]];
     [cell.nameLabel setTextColor:[UIColor colorWithHexString:@"#007ae0"]];
     
     cell.nameLabel.text = friend.name;
@@ -273,11 +213,6 @@ static int retryCount;
     }
     
     cell.backgroundImageView.image = backgroundImage;
-    
-//    UIView *customCellView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 271, 69)];
-//    customCellView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_cell_topcap_fbfriends.png"]];
-//    
-//    cell.backgroundView = customCellView;
     
     return cell;
 }

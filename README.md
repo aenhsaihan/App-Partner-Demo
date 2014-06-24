@@ -14,9 +14,9 @@ The assignment consists of three coding tasks:
 ##TASKS
 
 - [x] Build out the UI fully
-- [ ] Build out Facebook component
+- [x] Build out Facebook component
 - [x] Build out server ping component
-- [ ] Build out animation component
+- [x] Build out animation component
 
 ##USER INTERFACE
 
@@ -41,15 +41,11 @@ The user interface appears to consist of four views, along with an initial splas
 
 ##FACEBOOK COMPONENT
 
-This is where you'll talk about Facebook stuff.
-
-##SERVER PING COMPONENT
-
-This is where you'll talk about server ping.
+Apparently, Facebook has recently decided to not allow developers to pull the list of user's Facebook friends. You can only view friends who have downloaded the same app as you. I was only able to have one of my friends download the same app, so I only had one friend for my list, which prevented me from working with a tableView with more than one friend.
 
 ##ANIMATION COMPONENT
 
-This is where you'll talk about the animation component.
+Spinning and dragging has been implemented for the animation component. In addition to that, you can rotate the logo using two fingers, and you can zoom in and out on the logo by pinching it. Furthermore, all gestures can be recognized simultaneously, so gesture away!
 
 ##HOURS
 
@@ -60,5 +56,5 @@ Tasks | Hours
 Planning | 1
 Build UI | 3
 Post Request | 1.5
-Facebook SDK | ?
-Animation | ?
+Facebook SDK | 5
+Animation | 2

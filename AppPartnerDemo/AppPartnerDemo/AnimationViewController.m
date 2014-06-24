@@ -49,6 +49,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Touch handling
+
 /**
  Scale and rotation transforms are applied relative to the layer's anchor point this method moves a gesture recognizer's view's anchor point between the user's fingers.
  */
@@ -121,6 +123,10 @@
     return YES;
 }
 
+/**
+ Scale the piece by the current scale.
+ Reset the gesture recognizer's rotation to 0 after applying so the next callback is a delta from the current scale.
+ */
 - (IBAction)scalePiece:(UIPinchGestureRecognizer *)gestureRecognizer {
     
     [self adjustAnchorPointForGestureRecognizer:gestureRecognizer];
@@ -131,6 +137,7 @@
     }
 }
 
+#pragma mark - Spinning code
 
 - (IBAction)spinButtonPressed:(id)sender {
     

@@ -76,6 +76,7 @@
 		48A8E10119538FC900E373DC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A8E10019538FC900E373DC /* FacebookSDK.framework */; };
 		48A8E10A1958E9FB00E373DC /* MiddleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48A8E1091958E9FB00E373DC /* MiddleTableCell.xib */; };
 		48A8E10D1959023100E373DC /* MiddleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A8E10C1959023100E373DC /* MiddleTableCell.m */; };
+		48A8E10F1959DE2D00E373DC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A8E10E1959DE2D00E373DC /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,7 @@
 		48A8E1091958E9FB00E373DC /* MiddleTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiddleTableCell.xib; sourceTree = "<group>"; };
 		48A8E10B1959023100E373DC /* MiddleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleTableCell.h; sourceTree = "<group>"; };
 		48A8E10C1959023100E373DC /* MiddleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiddleTableCell.m; sourceTree = "<group>"; };
+		48A8E10E1959DE2D00E373DC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48A8E10F1959DE2D00E373DC /* QuartzCore.framework in Frameworks */,
 				48A8E10119538FC900E373DC /* FacebookSDK.framework in Frameworks */,
 				482D6D211951025B002374C0 /* CoreGraphics.framework in Frameworks */,
 				482D6D231951025B002374C0 /* UIKit.framework in Frameworks */,
@@ -217,6 +220,7 @@
 		482D6D1D1951025B002374C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				48A8E10E1959DE2D00E373DC /* QuartzCore.framework */,
 				48A8E10019538FC900E373DC /* FacebookSDK.framework */,
 				482D6D1E1951025B002374C0 /* Foundation.framework */,
 				482D6D201951025B002374C0 /* CoreGraphics.framework */,

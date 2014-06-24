@@ -143,20 +143,19 @@
 
 - (IBAction)spinButtonPressed:(id)sender {
     
-    [self runSpinAnimationOnView:self.logo duration:1.0 rotations:1 repeat:1.0];
+    [self rotateSpinningView];
     
 }
 
-- (void) runSpinAnimationOnView:(UIView*)view duration:(CGFloat)duration rotations:(CGFloat)rotations repeat:(float)repeat;
+- (void)rotateSpinningView
 {
-    CABasicAnimation *rotationAnimation;
-    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 /* full rotation*/ * rotations * duration ];
-    rotationAnimation.duration = duration;
-    rotationAnimation.cumulative = YES;
-    rotationAnimation.repeatCount = repeat;
-    
-    [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        [self.logo setTransform:CGAffineTransformRotate(self.logo.transform, M_PI_2)];
+    } completion:^(BOOL finished) {
+        if (finished && !CGAffineTransformEqualToTransform(self.logo.transform, CGAffineTransformIdentity)) {
+            [self rotateSpinningView];
+        }
+    }];
 }
 
 @end

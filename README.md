@@ -49,7 +49,7 @@ Spinning and dragging has been implemented for the animation component. In addit
 
 ##OTHER NOTES
 
-I had some issues with the font sizes. All the fonts ended up looking bigger than the PDF even though I used the given font sizes.
+I had some issues with the font sizes. All the fonts ended up looking bigger than the PDF even though I used the given font sizes. Therefore, I ended up using smaller sizes in order to approximate the font size visually from the PDF.
 
 ##HOURS
 

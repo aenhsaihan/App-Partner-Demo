@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray *friends;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UIActivityIndicatorView *spinner;
 
 
 - (IBAction)reloadButtonTouched:(id)sender;

@@ -37,7 +37,10 @@ static int retryCount;
     self.title = @"FACEBOOK FRIENDS";
     
     self.tableView.layer.cornerRadius = 2;
-
+    
+    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.spinner.center = CGPointMake(self.tableView.frame.size.width/2, self.tableView.frame.size.height/2);
+    [self.tableView addSubview:self.spinner];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +54,8 @@ static int retryCount;
     if (![APP_DELEGATE checkForInternetConnection]) {
         return;
     }
+    
+    [self.spinner startAnimating];
     
     // If the session state is any of the two "open" states when the button is clicked
     if (FBSession.activeSession.state == FBSessionStateOpen
@@ -93,6 +98,7 @@ static int retryCount;
         if (!error) {
             // Success! Include your code to handle the results here
             
+            [self.spinner stopAnimating];
             
             self.friends = [result objectForKey:@"data"];
             NSLog(@"Found: %i friends", self.friends.count);
@@ -159,6 +165,8 @@ static int retryCount;
         alertTitle = @"Something went wrong";
         alertText = @"Please try again later.";
     }
+    
+    [self.spinner stopAnimating];
     
     [APP_DELEGATE showMessage:alertText withTitle:alertTitle];
 }

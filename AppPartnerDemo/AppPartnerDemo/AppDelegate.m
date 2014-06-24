@@ -94,15 +94,6 @@ static NSOperationQueue *connectionQueue;
     if (!error && state == FBSessionStateOpen){
         NSLog(@"Session opened");
         
-        //If you're making an API request for user data
-        if (self.APIRequest) {
-            FacebookViewController *facebookVC = [[FacebookViewController alloc] init];
-            [facebookVC makeGraphAPICall];
-            
-            //Reset flag for making API request
-            self.APIRequest = NO;
-        }
-        
         return;
     }
     if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){

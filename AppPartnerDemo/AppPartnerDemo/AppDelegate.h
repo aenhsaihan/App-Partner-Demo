@@ -13,8 +13,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property BOOL APIRequest;
-
 +(NSOperationQueue *)connectionQueue;
 
 - (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;

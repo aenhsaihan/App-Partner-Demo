@@ -77,7 +77,7 @@ static int retryCount;
                                       completionHandler:
          ^(FBSession *session, FBSessionState state, NSError *error) {
              
-             APP_DELEGATE.APIRequest = YES;
+             [self makeGraphAPICall];
              
              // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
              [APP_DELEGATE sessionStateChanged:session state:state error:error];
